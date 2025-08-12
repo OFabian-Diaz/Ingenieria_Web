@@ -1,0 +1,255 @@
+/* 
+   Perfil de Usuario - CSS
+   Diseño Mobile-First con CSS Grid y Flexbox
+   Sin clases adicionales - Solo selectores avanzados
+*/
+
+/* Reset básico y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* ESTILOS BASE MÓVIL (Mobile-First) */
+
+/* Contenedor principal del perfil */
+.profile-container {
+    max-width: 100%;
+    margin: 0 auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    /* En móvil: disposición vertical (una columna) */
+    display: block;
+}
+
+/* Sección header (foto y nombre) */
+header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: linear-gradient(135deg, #f4a261 0%, #e76f51 100%);
+    color: white;
+}
+
+header img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid white;
+    margin-bottom: 1rem;
+    object-fit: cover;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: 0;
+}
+
+/* Pseudo-elemento decorativo en el nombre */
+header h1::after {
+    content: "✨";
+    display: inline-block;
+    margin-left: 0.5rem;
+    font-size: 1rem;
+}
+
+/* Sección main (información y navegación) */
+main {
+    padding: 2rem 1rem;
+}
+
+/* Párrafo de información */
+main p {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #666;
+    text-align: center;
+}
+
+/* Pseudo-elemento decorativo antes del párrafo */
+main p::before {
+    content: "💭";
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Navegación */
+nav {
+    margin-top: 1.5rem;
+}
+
+/* Lista de navegación - Flexbox para disposición */
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+nav ul li {
+    width: 100%;
+    max-width: 200px;
+}
+
+/* Selector descendiente para enlaces del menú */
+nav ul li a {
+    display: block;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    color: #e76f51;
+    background: #fef7e7;
+    border-radius: 25px;
+    text-align: center;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+/* Pseudo-clase hover para enlaces */
+nav ul li a:hover {
+    background: #f4a261;
+    color: white;
+    border-color: #f4a261;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(244, 162, 97, 0.3);
+}
+
+/* Pseudo-elemento decorativo en enlaces */
+nav ul li a::before {
+    content: "▶";
+    margin-right: 0.5rem;
+    font-size: 0.8rem;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+nav ul li a:hover::before {
+    opacity: 1;
+}
+
+/* MEDIA QUERY PARA ESCRITORIO (min-width: 768px) */
+@media (min-width: 768px) {
+    
+    /* CSS Grid para el contenedor principal - DOS COLUMNAS */
+    .profile-container {
+        max-width: 900px;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas: 
+            "header main";
+        min-height: 500px;
+    }
+    
+    /* Asignación de áreas del grid */
+    header {
+        grid-area: header;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 3rem 2rem;
+    }
+    
+    main {
+        grid-area: main;
+        padding: 3rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    /* Ajustes para desktop */
+    header img {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 1.5rem;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    main p {
+        text-align: left;
+        font-size: 1.1rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    /* Flexbox para navegación en fila con espaciado uniforme */
+    nav ul {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1.5rem;
+        margin-top: auto;
+    }
+    
+    nav ul li {
+        flex: 1;
+        max-width: none;
+    }
+    
+    /* Ajustes de enlaces para desktop */
+    nav ul li a {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    /* Efectos hover mejorados para desktop */
+    nav ul li a:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgba(244, 162, 97, 0.4);
+    }
+}
+
+/* Selector de último hijo para efecto especial */
+nav ul li:last-child a {
+    background: #fef7e7;
+    color: #e76f51;
+    border: 2px solid transparent;
+}
+
+nav ul li:last-child a:hover {
+    background: linear-gradient(135deg, #f4a261 0%, #e76f51 100%);
+    color: white;
+    transform: translateY(-3px) scale(1.05);
+}
+
+/* Selector de primer hijo para efecto especial */
+nav ul li:first-child a::before {
+    content: "🏠";
+    margin-right: 0.5rem;
+}
+
+/* Selector de nth-child para efectos alternados */
+nav ul li:nth-child(2) a::before {
+    content: "👥";
+    margin-right: 0.5rem;
+}
+
+nav ul li:nth-child(3) a::before {
+    content: "📷";
+    margin-right: 0.5rem;
+}
+
+/* Animación sutil para toda la tarjeta */
+.profile-container {
+    transition: transform 0.3s ease;
+}
+
+.profile-container:hover {
+    transform: translateY(-5px);
+}
