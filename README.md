@@ -1,7 +1,8 @@
 # Ingenieria Web A3
 ## Este repositorio de github corresponde a la asignatura ingenieria web 1
  
-GUIA 1
+### GUIA 1
+
 Cómo clonar y visualizar el proyecto desde GitHub
 ¿Qué significa clonar un repositorio?
 Clonar un repositorio es el proceso de copiar todo el contenido de un proyecto desde GitHub a tu computador local. Esto te permite:
@@ -68,7 +69,7 @@ También aprendí a organizar archivos y carpetas dentro de un proyecto web, y a
 
 
 
-Explicación:
+### Explicación:
 
 index.html: Página principal con la historia de la ingeniería web.
 Los demás archivos .html contienen explicaciones específicas según el tema.
@@ -78,7 +79,7 @@ Reflexión en equipo
 ¿Por qué organizar de forma semántica los contenidos facilita el trabajo colaborativo y el mantenimiento del sitio?
 Porque permite que cualquier miembro del equipo entienda fácilmente la estructura y el propósito de cada parte del documento. Las etiquetas semánticas describen el contenido de manera clara y hacen que el código sea más legible, tanto para personas como para máquinas.
 
-##Tres ventajas observadas del uso de HTML5 moderno:
+## Tres ventajas observadas del uso de HTML5 moderno:
 
 Mejora la accesibilidad para todos los usuarios, incluyendo personas con discapacidad.
 Facilita el posicionamiento en buscadores gracias a su estructura clara.
