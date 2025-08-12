@@ -85,4 +85,4 @@ Mejora la accesibilidad para todos los usuarios, incluyendo personas con discapa
 Facilita el posicionamiento en buscadores gracias a su estructura clara.
 Hace el código más limpio, ordenado y fácil de mantener.
 
-### Guia 2
+### GUIA 2
