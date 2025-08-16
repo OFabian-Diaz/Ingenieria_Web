@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog de Aprendizaje - Oscar Díaz</title>
+  <style>
+
+    /* Mobile-First: Estilos base para móviles */
+    body { 
+      font-family: 'Georgia', serif; 
+      line-height: 1.6; 
+      margin: 0; 
+      padding: 0.5rem; 
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    
+    h1 { 
+      text-align: center; 
+      color: #2c3e50;
+      font-size: 1.8rem;
+      margin: 1rem 0;
+      padding: 1rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border-radius: 8px;
+    }
+    
+    h2 { 
+      text-align: center; 
+      color: #34495e;
+      font-size: 1.3rem;
+      margin: 1.5rem 0 1rem 0;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 0.5rem;
+    }
+    
+    p { 
+      margin: 0.8rem 0; 
+      text-align: justify;
+      font-size: 1rem;
+    }
+    
+    ul { 
+      padding-left: 1.5rem; 
+      margin: 1rem 0;
+    }
+    
+    li { 
+      margin: 0.8rem 0; 
+      line-height: 1.5;
+    }
+    
+    strong {
+      color: #e74c3c;
+      font-weight: bold;
+    }
+    
+    section { 
+      margin: 1.5rem auto; 
+      max-width: 100%;
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    /* Galería - Mobile First */
+    section img { 
+      width: 100%; 
+      max-width: 150px;
+      height: auto; 
+      margin: 0.5rem; 
+      transition: all 0.3s ease; 
+      border-radius: 5px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      display: block;
+    }
+    
+    section img:hover { 
+      transform: scale(2);           /* se agranda el doble */
+      z-index: 10;                   /* se pone encima */
+      position: relative;            /* para que funcione el z-index */
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    }
+    
+    section div {
+      text-align: center;
+    }
+    
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #34495e;
+      color: white;
+      border-radius: 8px;
+    }
+    
+    footer p {
+      margin: 0;
+      font-style: italic;
+    }
+    
+    em {
+      color: #ecf0f1;
+    }
+
+    /* Media Queries - Tablet */
+    @media (min-width: 768px) {
+      body {
+        padding: 1rem;
+      }
+      
+      h1 {
+        font-size: 2.2rem;
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+      
+      section {
+        max-width: 700px;
+        padding: 1.5rem;
+      }
+      
+      section img { 
+        width: 150px;         
+        height: 150px;        
+        object-fit: cover;    
+        margin: 0.5rem; 
+        transition: all 0.3s ease; 
+        border-radius: 5px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        display: inline-block; 
+      }
+      
+      p {
+        font-size: 1.1rem;
+      }
+    }
+
+    /* Media Queries - Desktop */
+    @media (min-width: 1024px) {
+      body {
+        padding: 2rem;
+      }
+      
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      h2 {
+        font-size: 1.7rem;
+      }
+      
+      section {
+        max-width: 800px;
+        padding: 2rem;
+      }
+      
+      section img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        margin: 1rem;
+      }
+      
+      section img:hover {
+        transform: scale(2.5);       /* mucho más grande en escritorio */
+        z-index: 10;
+        position: relative;
+      }
+      
+      p {
+        font-size: 1.2rem;
+      }
+      
+      li {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+  
+</head>
+<body>
+  <h1>Oscar Díaz</h1>
+
+  <section>
+    <h2>Conclusiones sobre la especificidad de CSS</h2>
+    <p>
+      La especificidad en CSS es clave porque define qué regla se aplica cuando varias afectan al mismo elemento.
+      Aprendí que si no controlo la especificidad, mi código se vuelve difícil de mantener y depurar.
+      Entender cómo funciona me permite escribir estilos más limpios y evitar conflictos.
+    </p>
+  </section>
+
+  <section>
+    <h2>Selectores avanzados que más me costaron</h2>
+    <ul>
+      <li><strong>:nth-child()</strong> – Me costó porque al inicio confundía la numeración y no entendía cómo se aplicaba a cada elemento.</li>
+      <li><strong>ul > li</strong> – Al principio no diferenciaba entre el hijo directo y el descendiente general.</li>
+      <li><strong>a:hover</strong> – Aunque parece sencillo, me tomó práctica entender cómo mejorar la interacción visual de los enlaces.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Galería de imágenes</h2>
+    <p>Las imágenes aumentan de tamaño al pasar el cursor sobre ellas:</p>
+    <div>
+      <img src="Imagenes png/imagen1.jpg" alt="Imagen 1">
+      <img src="Imagenes png/imagen2.jpg" alt="Imagen 2">
+      <img src="Imagenes png/imagen3.jpg" alt="Imagen 3">
+    </div>
+  </section>
+
+  <section>
+    <h2>Explicación del Mobile-First</h2>
+    <p>
+      El enfoque Mobile-First significa diseñar primero para pantallas pequeñas,
+      garantizando que el contenido sea accesible en dispositivos móviles.
+      Después se van agregando reglas con media queries para mejorar la experiencia en pantallas más grandes.
+      En mi proyecto apliqué esta lógica empezando con estilos simples y apilados,
+      y luego adaptando el diseño con ajustes para escritorio.
+    </p>
+  </section>
+
+  <footer>
+    <p><em>Commit realizado: "feat: Creación de blog personal de Oscar Díaz"</em></p>
+  </footer>
+</body>
+</html>
