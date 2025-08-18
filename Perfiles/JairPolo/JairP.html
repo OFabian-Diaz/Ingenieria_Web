@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog Personal - Jair Polo</title>
+  <style>
+    /* Mobile-First */
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 1rem;
+      background-color: #f4fdf7;
+      color: #222;
+    }
+
+    h1 {
+      text-align: center;
+      background-color: #2ecc71;
+      color: white;
+      padding: 1rem;
+      border-radius: 10px;
+      font-size: 1.7rem;
+    }
+
+    h2 {
+      color: #27ae60;
+      font-size: 1.3rem;
+      margin-top: 1.2rem;
+      border-left: 4px solid #2ecc71;
+      padding-left: 0.5rem;
+    }
+
+    p {
+      text-align: justify;
+      line-height: 1.6;
+      margin: 0.7rem 0;
+    }
+
+    section {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 1rem;
+      margin: 1rem auto;
+      max-width: 100%;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin: 0.6rem 0;
+    }
+
+    strong {
+      color: #c0392b;
+    }
+
+    /* Galería base */
+    .galeria {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .galeria img {
+      width: 100%;
+      max-width: 180px;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.3);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #27ae60;
+      color: white;
+      border-radius: 8px;
+      font-style: italic;
+    }
+
+    /* Tablet */
+    @media (min-width: 768px) {
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.5rem; }
+      section { max-width: 700px; }
+      .galeria { flex-direction: row; justify-content: center; }
+      .galeria img { max-width: 150px; }
+    }
+
+    /* Desktop */
+    @media (min-width: 1024px) {
+      h1 { font-size: 2.3rem; }
+      section { max-width: 850px; padding: 2rem; }
+      .galeria img { max-width: 200px; }
+      .galeria img:hover { transform: scale(1.6); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Blog Jair Polo</h1>
+
+  <section>
+    <h2>Conclusiones sobre la especificidad de CSS</h2>
+    <p>
+      Comprendí que la especificidad de CSS funciona como una jerarquía de prioridades
+      que define qué estilos se aplican en caso de conflicto. 
+      Aprender a usarla correctamente me ayudó a escribir código más ordenado, 
+      evitando el abuso de selectores complejos y manteniendo la claridad en mis hojas de estilo.
+    </p>
+  </section>
+
+  <section>
+  <h2>Selectores avanzados que más me costaron</h2>
+  <ul>
+    <li><strong>section > h2</strong> – me costó porque al inicio no entendía la diferencia entre un selector de descendencia normal y uno de hijo directo.</li>
+    <li><strong>:first-child / :last-child</strong> – fue confuso porque no siempre apuntaban al elemento que yo esperaba dentro de una lista.</li>
+    <li><strong>::first-line</strong> – difícil porque no aplica a cualquier cosa, solo al texto y tiene limitaciones en qué propiedades se pueden usar.</li>
+    <li><strong>:hover</strong> – aunque sencillo en teoría, me costó aplicarlo en imágenes y enlaces sin romper el diseño.</li>
+  </ul>
+</section>
+
+  <section>
+    <h2>Galería de imágenes</h2>
+    <p>Pasa el cursor sobre las imágenes para ver el efecto:</p>
+    <div class="galeria">
+      <img src="https://picsum.photos/seed/jair1/400/300" alt="Imagen 1">
+      <img src="https://picsum.photos/seed/jair2/400/300" alt="Imagen 2">
+      <img src="https://picsum.photos/seed/jair3/400/300" alt="Imagen 3">
+    </div>
+  </section>
+
+  <section>
+    <h2>Explicación del enfoque Mobile-First</h2>
+    <p>
+      El enfoque Mobile-First se basa en diseñar la web empezando desde las pantallas más pequeñas, garantizando que sea usable en móviles. Luego, mediante media queries, se añaden mejoras para tabletas y escritorios, creando una experiencia progresiva y adaptada a cada dispositivo
+    </p>
+  </section>
+
+  
+</body>
+</html>
