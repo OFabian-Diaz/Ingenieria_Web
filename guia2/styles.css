@@ -4,7 +4,7 @@
    Sin clases adicionales - Solo selectores avanzados
 */
 
-/* Reset básico y estilos base */
+
 * {
     margin: 0;
     padding: 0;
@@ -55,7 +55,7 @@ header h1 {
     margin: 0;
 }
 
-/* Pseudo-elemento decorativo en el nombre */
+
 header h1::after {
     content: "✨";
     display: inline-block;
@@ -77,7 +77,7 @@ main p {
     text-align: center;
 }
 
-/* Pseudo-elemento decorativo antes del párrafo */
+
 main p::before {
     content: "💭";
     display: block;
@@ -105,7 +105,7 @@ nav ul li {
     max-width: 200px;
 }
 
-/* Selector descendiente para enlaces del menú */
+
 nav ul li a {
     display: block;
     padding: 0.8rem 1.5rem;
@@ -128,7 +128,7 @@ nav ul li a:hover {
     box-shadow: 0 4px 8px rgba(244, 162, 97, 0.3);
 }
 
-/* Pseudo-elemento decorativo en enlaces */
+
 nav ul li a::before {
     content: "▶";
     margin-right: 0.5rem;
@@ -141,10 +141,10 @@ nav ul li a:hover::before {
     opacity: 1;
 }
 
-/* MEDIA QUERY PARA ESCRITORIO (min-width: 768px) */
+
 @media (min-width: 768px) {
     
-    /* CSS Grid para el contenedor principal - DOS COLUMNAS */
+    
     .profile-container {
         max-width: 900px;
         display: grid;
@@ -154,7 +154,7 @@ nav ul li a:hover::before {
         min-height: 500px;
     }
     
-    /* Asignación de áreas del grid */
+    
     header {
         grid-area: header;
         display: flex;
@@ -189,7 +189,7 @@ nav ul li a:hover::before {
         margin-bottom: 2.5rem;
     }
     
-    /* Flexbox para navegación en fila con espaciado uniforme */
+    
     nav ul {
         flex-direction: row;
         justify-content: space-between;
@@ -202,7 +202,7 @@ nav ul li a:hover::before {
         max-width: none;
     }
     
-    /* Ajustes de enlaces para desktop */
+    
     nav ul li a {
         padding: 1rem 1.5rem;
         font-size: 1rem;
@@ -215,7 +215,7 @@ nav ul li a:hover::before {
     }
 }
 
-/* Selector de último hijo para efecto especial */
+
 nav ul li:last-child a {
     background: #fef7e7;
     color: #e76f51;
@@ -228,13 +228,13 @@ nav ul li:last-child a:hover {
     transform: translateY(-3px) scale(1.05);
 }
 
-/* Selector de primer hijo para efecto especial */
+
 nav ul li:first-child a::before {
     content: "🏠";
     margin-right: 0.5rem;
 }
 
-/* Selector de nth-child para efectos alternados */
+
 nav ul li:nth-child(2) a::before {
     content: "👥";
     margin-right: 0.5rem;
@@ -245,7 +245,7 @@ nav ul li:nth-child(3) a::before {
     margin-right: 0.5rem;
 }
 
-/* Animación sutil para toda la tarjeta */
+
 .profile-container {
     transition: transform 0.3s ease;
 }
