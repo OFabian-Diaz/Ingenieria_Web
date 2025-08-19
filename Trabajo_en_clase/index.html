@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Interactiva Completa - Fundamentos de Programación</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .section {
+            background: #f8f9fa;
+            margin: 20px 0;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #3498db;
+        }
+        
+        .section h2 {
+            color: #2980b9;
+            margin-bottom: 15px;
+        }
+        
+        .interactive-element {
+            background: white;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+        
+        .interactive-element:hover {
+            border-color: #3498db;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.1);
+        }
+        
+        button {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        input, select {
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            margin: 5px;
+            transition: border-color 0.3s ease;
+        }
+        
+        input:focus, select:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        
+        .resultado {
+            background: #e8f5e8;
+            border: 2px solid #27ae60;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            display: none;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 10px;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+        
+        .status-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 14px;
+            z-index: 1000;
+        }
+        
+        .condition-status {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+        
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #e74c3c;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .status-dot.active {
+            background: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="titulo-principal">Fundamentos de Programación</h1>
+        
+        <div class="status-indicator" id="status-indicator">
+            <div><strong> Easter Egg - Estado:</strong></div>
+            <div class="condition-status">
+                <div class="status-dot" id="dot1"></div>
+                <span>Condición 1: Calculadora</span>
+            </div>
+            <div class="condition-status">
+                <div class="status-dot" id="dot2"></div>
+                <span>Condición 2: Validador</span>
+            </div>
+            <div class="condition-status">
+                <div class="status-dot" id="dot3"></div>
+                <span>Condición 3: Quiz</span>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2> Introducción a la Programación</h2>
+            <p>Bienvenido a nuestra guía interactiva completa. Aquí aprenderás los fundamentos de la programación a través de ejercicios prácticos y ejemplos interactivos.</p>
+            <div class="highlight">
+                <strong> Pista:</strong> Interactúa con todos los elementos de esta página. Hay un easter egg esperando que completes ciertas acciones...
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2> Sección 1: Calculadora Interactiva</h2>
+            <p>Resuelve la operación matemática que se genera aleatoriamente.</p>
+            <div class="interactive-element">
+                <div id="problema-matematico" style="font-size: 20px; font-weight: bold; text-align: center; margin: 15px 0; padding: 20px; background: #f0f8ff; border-radius: 8px; border: 2px solid #3498db;">
+                    <span id="operacion-texto">Presiona "Generar Problema" para comenzar</span>
+                </div>
+                
+                <label for="respuesta-usuario">Tu respuesta:</label>
+                <input type="number" id="respuesta-usuario" placeholder="Ingresa tu respuesta" step="0.01">
+                
+                <div style="text-align: center; margin: 15px 0;">
+                    <button id="btn-generar">Generar Problema</button>
+                    <button id="btn-verificar" disabled>Verificar Respuesta</button>
+                </div>
+                
+                <div id="resultado-calculadora" class="resultado">
+                    <span id="valor-resultado"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2> Sección 2: Validador de Formulario</h2>
+            <p>Practica la validación de formularios y manejo de strings.</p>
+            <div class="interactive-element">
+                <label for="nombre-usuario">Nombre completo:</label>
+                <input type="text" id="nombre-usuario" placeholder="Ingresa tu nombre completo">
+                
+                <label for="email-usuario">Correo electrónico:</label>
+                <input type="email" id="email-usuario" placeholder="ejemplo@correo.com">
+                
+                <label for="edad-usuario">Edad (debe ser mayor de edad):</label>
+                <input type="number" id="edad-usuario" min="18" max="120" placeholder="Tu edad (18+)">
+                
+                <button id="btn-validar">Validar Información</button>
+                
+                <div id="resultado-validacion" class="resultado">
+                    <div id="mensaje-validacion"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2> Sección 3: Quiz de Programación</h2>
+            <p>Demuestra tus conocimientos respondiendo correctamente.</p>
+            <div class="interactive-element">
+                <p><strong>¿Cuál es el lenguaje de programación más utilizado para desarrollo web frontend?</strong></p>
+                
+                <div>
+                    <input type="radio" id="opcion-a" name="quiz" value="python">
+                    <label for="opcion-a">Python</label>
+                </div>
+                
+                <div>
+                    <input type="radio" id="opcion-b" name="quiz" value="javascript">
+                    <label for="opcion-b">JavaScript</label>
+                </div>
+                
+                <div>
+                    <input type="radio" id="opcion-c" name="quiz" value="java">
+                    <label for="opcion-c">Java</label>
+                </div>
+                
+                <div>
+                    <input type="radio" id="opcion-d" name="quiz" value="cpp">
+                    <label for="opcion-d">C++</label>
+                </div>
+                
+                <button id="btn-responder">Responder</button>
+                
+                <div id="resultado-quiz" class="resultado">
+                    <div id="mensaje-quiz"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2> Desafío Final</h2>
+            <p>¿Puedes activar el agente secreto? Completa las tres secciones anteriores para descubrir el mensaje oculto...</p>
+            <div class="highlight">
+                <strong> Instrucciones Easter Egg:</strong>
+                <ul>
+                    <li>Realiza un cálculo en la calculadora</li>
+                    <li>Valida información correctamente en el formulario</li>
+                    <li>Responde correctamente el quiz de programación</li>
+                </ul>
+                <p><em>El agente se activará automáticamente cuando completes las tres acciones.</em></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        
+        // Variables booleanas para las tres condiciones
+        let condicion1_cumplida = false; // Calculadora utilizada
+        let condicion2_cumplida = false; // Validación exitosa
+        let condicion3_cumplida = false; // Quiz respondido correctamente
+        let mision_completada = false;   // Para evitar múltiples activaciones
+        
+        // Función para verificar si todas las condiciones se han cumplido
+        function verificarCondiciones() {
+            // Actualizar indicadores visuales
+            document.getElementById('dot1').classList.toggle('active', condicion1_cumplida);
+            document.getElementById('dot2').classList.toggle('active', condicion2_cumplida);
+            document.getElementById('dot3').classList.toggle('active', condicion3_cumplida);
+            
+            // Si todas las condiciones están cumplidas y la misión no se ha completado
+            if (condicion1_cumplida && condicion2_cumplida && condicion3_cumplida && !mision_completada) {
+                activarAgente();
+            }
+        }
+        
+        // Función que se ejecuta cuando se activa el agente
+        function activarAgente() {
+            mision_completada = true;
+            
+            // Cambiar el estilo del título principal según especificaciones
+            const titulo = document.getElementById('titulo-principal');
+            titulo.style.backgroundColor = '#FFD700';
+            titulo.style.color = '#000000';
+            titulo.style.transform = 'scale(1.05)';
+            titulo.style.boxShadow = '0 10px 30px rgba(255, 215, 0, 0.4)';
+            
+            // Crear el mensaje de misión cumplida
+            const mensajeMision = document.createElement('p');
+            mensajeMision.innerHTML = '<strong>Misión Cumplida: Agente DOM activado.</strong>';
+            mensajeMision.style.fontWeight = 'bold';
+            mensajeMision.style.color = '#15803d';
+            mensajeMision.style.marginTop = '20px';
+            mensajeMision.style.textAlign = 'center';
+            mensajeMision.style.fontSize = '18px';
+            mensajeMision.style.padding = '15px';
+            mensajeMision.style.background = 'rgba(21, 128, 61, 0.1)';
+            mensajeMision.style.borderRadius = '10px';
+            mensajeMision.style.border = '2px solid #15803d';
+            mensajeMision.style.animation = 'fadeInScale 1s ease-out';
+            
+            // Insertar el mensaje inmediatamente después del título principal
+            titulo.parentNode.insertBefore(mensajeMision, titulo.nextSibling);
+            
+            // Agregar animación CSS dinámicamente
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes fadeInScale {
+                    0% { opacity: 0; transform: scale(0.8); }
+                    100% { opacity: 1; transform: scale(1); }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // Ocultar el indicador de estado después de un momento
+            setTimeout(() => {
+                document.getElementById('status-indicator').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('status-indicator').style.display = 'none';
+                }, 500);
+            }, 3000);
+            
+            console.log('🎉 ¡AGENTE DOM ACTIVADO! Misión cumplida exitosamente.');
+        }
+        
+        // ===== SECCIÓN 1: CALCULADORA =====
+        let problemaActual = null;
+        
+        document.getElementById('btn-generar').addEventListener('click', function() {
+            // Generar números aleatorios
+            const num1 = Math.floor(Math.random() * 50) + 1; // 1-50
+            const num2 = Math.floor(Math.random() * 20) + 1; // 1-20
+            const operaciones = ['suma', 'resta', 'multiplicacion', 'division'];
+            const operacionAleatoria = operaciones[Math.floor(Math.random() * operaciones.length)];
+            
+            let simbolo, resultadoCorrecto;
+            
+            switch(operacionAleatoria) {
+                case 'suma':
+                    simbolo = '+';
+                    resultadoCorrecto = num1 + num2;
+                    break;
+                case 'resta':
+                    simbolo = '-';
+                    resultadoCorrecto = num1 - num2;
+                    break;
+                case 'multiplicacion':
+                    simbolo = '×';
+                    resultadoCorrecto = num1 * num2;
+                    break;
+                case 'division':
+                    simbolo = '÷';
+                    resultadoCorrecto = parseFloat((num1 / num2).toFixed(2));
+                    break;
+            }
+            
+            // Guardar el problema actual
+            problemaActual = {
+                num1: num1,
+                num2: num2,
+                operacion: operacionAleatoria,
+                resultado: resultadoCorrecto
+            };
+            
+            // Mostrar el problema
+            document.getElementById('operacion-texto').textContent = `${num1} ${simbolo} ${num2} = ?`;
+            document.getElementById('respuesta-usuario').value = '';
+            document.getElementById('btn-verificar').disabled = false;
+            document.getElementById('resultado-calculadora').style.display = 'none';
+        });
+        
+        document.getElementById('btn-verificar').addEventListener('click', function() {
+            const respuestaUsuario = parseFloat(document.getElementById('respuesta-usuario').value);
+            const resultadoDiv = document.getElementById('resultado-calculadora');
+            const valorResultado = document.getElementById('valor-resultado');
+            
+            if (isNaN(respuestaUsuario)) {
+                valorResultado.innerHTML = '<strong>Por favor, ingresa un número válido</strong>';
+                valorResultado.style.color = '#e74c3c';
+            } else if (problemaActual) {
+                const tolerancia = 0.01; // Para números decimales
+                const esCorrecta = Math.abs(respuestaUsuario - problemaActual.resultado) < tolerancia;
+                
+                if (esCorrecta) {
+                    valorResultado.innerHTML = '<strong>¡Correcto! ✅</strong><br>Excelente trabajo resolviendo la operación.';
+                    valorResultado.style.color = '#27ae60';
+                    
+                    // Activar condición 1 solo la primera vez
+                    if (!condicion1_cumplida) {
+                        condicion1_cumplida = true;
+                        console.log('✅ Condición 1 cumplida: Problema matemático resuelto correctamente');
+                        verificarCondiciones();
+                    }
+                } else {
+                    valorResultado.innerHTML = `<strong>Incorrecto ❌</strong><br>La respuesta correcta es: ${problemaActual.resultado}`;
+                    valorResultado.style.color = '#e74c3c';
+                }
+            }
+            
+            resultadoDiv.style.display = 'block';
+        });
+        
+        // ===== SECCIÓN 2: VALIDADOR =====
+        document.getElementById('btn-validar').addEventListener('click', function() {
+            const nombre = document.getElementById('nombre-usuario').value.trim();
+            const email = document.getElementById('email-usuario').value.trim();
+            const edad = parseInt(document.getElementById('edad-usuario').value);
+            const resultadoDiv = document.getElementById('resultado-validacion');
+            const mensajeDiv = document.getElementById('mensaje-validacion');
+            
+            let errores = [];
+            let exitos = [];
+            
+            // Validar nombre completo
+            if (nombre.length < 2) {
+                errores.push('El nombre debe tener al menos 2 caracteres');
+            } else if (nombre.split(' ').length < 2) {
+                errores.push('Ingresa tu nombre completo (nombre y apellido)');
+            } else {
+                exitos.push('Nombre válido ✅');
+            }
+            
+            // Validar email con regex
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                errores.push('El formato del email no es válido');
+            } else {
+                exitos.push('Email válido ✅');
+            }
+            
+            // Validar edad (mayor de edad)
+            if (isNaN(edad) || edad < 18 || edad > 120) {
+                errores.push('Debes ser mayor de edad (18 años o más)');
+            } else {
+                exitos.push('Edad válida ✅ (Mayor de edad)');
+            }
+            
+            // Mostrar resultados de validación
+            let mensaje = '';
+            if (exitos.length > 0) {
+                mensaje += '<div style="color: #27ae60; margin-bottom: 10px;"><strong>Validaciones exitosas:</strong><br>' + exitos.join('<br>') + '</div>';
+            }
+            if (errores.length > 0) {
+                mensaje += '<div style="color: #e74c3c;"><strong>Errores encontrados:</strong><br>' + errores.join('<br>') + '</div>';
+            }
+            
+            mensajeDiv.innerHTML = mensaje;
+            resultadoDiv.style.display = 'block';
+            
+            // Activar condición 2 solo si no hay errores
+            if (errores.length === 0 && !condicion2_cumplida) {
+                condicion2_cumplida = true;
+                console.log('✅ Condición 2 cumplida: Validación exitosa');
+                verificarCondiciones();
+            }
+        });
+        
+        // ===== SECCIÓN 3: QUIZ =====
+        document.getElementById('btn-responder').addEventListener('click', function() {
+            const respuestaSeleccionada = document.querySelector('input[name="quiz"]:checked');
+            const resultadoDiv = document.getElementById('resultado-quiz');
+            const mensajeDiv = document.getElementById('mensaje-quiz');
+            
+            if (!respuestaSeleccionada) {
+                mensajeDiv.innerHTML = '<div style="color: #e74c3c;"><strong>Por favor, selecciona una respuesta.</strong></div>';
+            } else {
+                const respuesta = respuestaSeleccionada.value;
+                
+                if (respuesta === 'javascript') {
+                    mensajeDiv.innerHTML = '<div style="color: #27ae60;"><strong>¡Correcto! ✅</strong><br>JavaScript es efectivamente el lenguaje más utilizado para desarrollo web frontend.</div>';
+                    
+                    // Activar condición 3 solo la primera vez que responda correctamente
+                    if (!condicion3_cumplida) {
+                        condicion3_cumplida = true;
+                        console.log('✅ Condición 3 cumplida: Quiz respondido correctamente');
+                        verificarCondiciones();
+                    }
+                } else {
+                    mensajeDiv.innerHTML = '<div style="color: #e74c3c;"><strong>Incorrecto ❌</strong><br>La respuesta correcta es JavaScript. ¡Inténtalo de nuevo!</div>';
+                }
+            }
+            
+            resultadoDiv.style.display = 'block';
+        });
+        
+        // Inicializar el agente al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            verificarCondiciones();
+            console.log('Easter Egg Completado. Esperando interacciones del usuario...');
+            console.log('📋 Condiciones requeridas:');
+            console.log('   1. Usar la calculadora');
+            console.log('   2. Validar información correctamente');
+            console.log('   3. Responder correctamente el quiz');
+        });
+    </script>
+</body>
+</html>
