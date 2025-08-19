@@ -86,3 +86,55 @@ Facilita el posicionamiento en buscadores gracias a su estructura clara.
 Hace el código más limpio, ordenado y fácil de mantener.
 
 ### GUIA 2
+## Tema de la Guia 
+**Estilos con CSS y Diseño Responsivo**  
+
+Este proyecto tiene como objetivo aplicar buenas prácticas en el desarrollo de interfaces web modernas, utilizando **CSS3** y sus herramientas de maquetación avanzada. Se busca comprender y poner en práctica metodologías de diseño como **Mobile First**, así como el uso de **Flexbox**, **CSS Grid** y **selectores avanzados**, para lograr un control preciso y adaptable de la interfaz en diferentes dispositivos.  
+
+---
+
+## Propósito y ventajas de la estructura usada  
+
+La estructura propuesta sigue un modelo profesional, donde los estilos CSS están organizados y optimizados para escalabilidad y mantenibilidad:  
+
+```
+/css → Contiene las hojas de estilo organizadas por módulos (reset.css, base.css, layout.css, components.css).
+/assets → Imágenes, íconos y tipografías para el diseño visual.
+/docs → Documentación de diseño, diagramas de estructura y guías de estilo.
+/js → Scripts que complementan la interacción, pero no afectan la responsabilidad principal de CSS.
+/index.html → Archivo principal que conecta la estructura con el diseño.
+```
+
+### Ventajas:  
+- **Mantenibilidad:** cada archivo CSS cumple una función específica, lo que facilita modificaciones sin romper el resto del diseño.  
+- **Escalabilidad:** se pueden añadir nuevas secciones o componentes sin afectar la estructura base.  
+- **Reutilización:** estilos definidos con clases modulares permiten que el mismo código CSS se aplique en diferentes partes del proyecto.  
+- **Colaboración:** facilita el trabajo en equipo al separar diseño (CSS) de estructura (HTML) y funcionalidad (JS).  
+
+---
+
+## Importancia del diseño responsive y Mobile First  
+
+En el desarrollo moderno, es fundamental que un sitio web se adapte a distintos tamaños de pantalla (móviles, tabletas, escritorio). La metodología **Mobile First** parte del diseño para móviles y luego escala hacia pantallas más grandes.  
+
+### Beneficios de Mobile First:  
+- **Optimización de rendimiento:** las versiones móviles cargan primero estilos básicos y ligeros.  
+- **Mejor experiencia de usuario (UX):** el diseño está centrado en la usabilidad en dispositivos móviles, donde más tráfico web ocurre.  
+- **Escalabilidad:** los estilos se enriquecen progresivamente para pantallas más amplias, evitando sobrecarga innecesaria.  
+
+---
+
+## Flexbox y CSS Grid en el proyecto  
+
+- **Flexbox:** se utiliza para organizar elementos en una sola dimensión (filas o columnas). Facilita alineación vertical, distribución de espacio y ordenamiento dinámico de componentes.  
+- **CSS Grid:** ideal para layouts bidimensionales complejos (cabeceras, barras laterales, pies de página). Permite crear cuadrículas flexibles y adaptativas.  
+
+### Ventajas combinadas:  
+- Flexbox aporta **flexibilidad** en componentes pequeños (menús, tarjetas).  
+- Grid estructura el **layout principal** del sitio con alta precisión.  
+
+
+## Conclusión  
+
+La correcta aplicación de **CSS con Mobile First, Flexbox y CSS Grid** permite crear interfaces modernas, escalables y responsivas.  
+Esto garantiza que los sitios web sean accesibles en cualquier dispositivo, fáciles de mantener y con una experiencia de usuario optimizada.  
