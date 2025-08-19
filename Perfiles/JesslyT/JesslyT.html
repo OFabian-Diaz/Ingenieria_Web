@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Personal - Jeslly Téllez</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #2575fc;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: #2575fc;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jeslly Téllez</h1>
+        <p>Blog personal/p>
+    </header>
+
+    <main>
+        <!-- Explicación Mobile-First -->
+        <section>
+            <h2>¿Qué es Mobile-First?</h2>
+            <p>
+                El enfoque <strong>Mobile-First</strong> significa empezar a diseñar una página pensando 
+                primero en los celulares. Hoy en día la mayoría de personas navega desde su teléfono, 
+                así que la idea es asegurar que la web sea clara, ligera y fácil de usar en pantallas pequeñas.  
+                Luego, con <em>media queries</em>, se van agregando mejoras para tablets y computadores, 
+                creando una experiencia adaptable y fluida sin importar el dispositivo.
+            </p>
+        </section>
+
+        
+        <section>
+            <h2>Selectores avanzados en CSS que me parecieron retadores</h2>
+            <ul>
+                <li>
+                    <strong>Hijo directo (>)</strong>: Selecciona solo los hijos inmediatos de un elemento.  
+                    Al inicio lo confundía con el descendiente normal, pero luego entendí que no afecta a “nietos”.
+                </li>
+                <li>
+                    <strong>Hermano adyacente (+)</strong>: Sirve para aplicar estilos a un elemento que viene 
+                    justo después de otro. No todos los hermanos, solo el primero.
+                </li>
+                <li>
+                    <strong>Selector de atributos</strong>: Permite aplicar estilos a elementos con ciertos atributos.  
+                    Los modificadores como ^=, $= o *= me resultaron un poco enredados hasta que vi ejemplos prácticos.
+                </li>
+            </ul>
+        </section>
+
+        
+        <section>
+            <h2>Galería</h2>
+            <div class="gallery">
+                 <img src="imagenes/pato.jpeg" alt="Imagen de un pato">
+                 <img src="imagenes/hotwheels.jpeg" alt="Hot Wheels edición especial">
+                 <img src="imagenes/bosque.jpeg" alt="Bosque">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Jeslly Téllez - Blog personal</p>
+    </footer>
+</body>
+</html>
